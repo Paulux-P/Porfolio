@@ -1,0 +1,66 @@
+﻿@font-face {
+    font-family: 'battlefront';
+    src: url('fonts/Battlefront_UI_2023.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100vh; /* Limite la hauteur du body à 100% de la fenêtre */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'battlefront', sans-serif;
+    
+}
+
+body {
+    background: #000 url(images/bg.png) center/cover no-repeat;
+}
+nav  {
+    margin-top: 90px;
+    margin-left: 20px;
+    display: inline-flex;
+    flex-direction: row;
+    list-style: none;
+    backdrop-filter: blur(10px);
+    width: auto;
+    
+}
+
+nav a {
+    padding: 12px ; 
+    width: 200px;
+    text-decoration:  none;
+    color: rgba(115, 115, 115);
+    font-size: 28px;
+    /* border-right: 2px solid rgb(82, 82, 82); */
+    border-width: 0px 2px;
+    border-style: solid;
+    border-color: rgb(82, 82, 82);
+    text-align: center;
+    margin-right: -2px;
+    transition-duration: 0.2s;
+    
+}
+
+/* nav a:first-child {
+    border-left:  2px solid rgb(82, 82, 82);
+}*/
+
+nav a:hover {
+    color: #fbb10a;
+    border-color: #fbb10a;
+    text-shadow: rgb(251, 177, 10) 0px 0px 10px;
+    z-index: 2;
+} 
+
