@@ -25,10 +25,19 @@ html {
 
 body {
     background: #000 url(images/wallpaperBackgroud.png) center/cover no-repeat;
+    
 }
+
+.container{
+    margin: 0px 48px 40px 48px;
+    padding-top: 40px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
 nav  {
-    margin-top: 90px;
-    margin-left: 20px;
     display: inline-flex;
     flex-direction: row;
     list-style: none;
@@ -43,7 +52,6 @@ nav a {
     text-decoration:  none;
     color: rgba(115, 115, 115);
     font-size: 28px;
-    /* border-right: 2px solid rgb(82, 82, 82); */
     border-width: 0px 2px;
     border-style: solid;
     border-color: rgb(82, 82, 82);
@@ -53,10 +61,6 @@ nav a {
     
 }
 
-/* nav a:first-child {
-    border-left:  2px solid rgb(82, 82, 82);
-}*/
-
 nav a:hover {
     color: #fbb10a;
     border-color: #fbb10a;
@@ -64,3 +68,44 @@ nav a:hover {
     z-index: 2;
 } 
 
+.active {
+    border-color: rgb(255, 255, 254);
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+}
+
+.grid-home {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 200px 200px;
+    max-width: 1000px;
+    border: 1px solid rgb(82, 82, 82);
+    
+}
+
+.home-box{
+    border: 2px solid rgba(115, 115, 115);
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.home-box:hover{
+    border-color: #fbb10a;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow: 0 0 10px #fbb10a, inset 0 0 10px #fbb10a;
+}
+
+.content{
+    color: rgb(229, 229, 229);
+}
+
+.box1{
+    grid-row: 1 / 3;
+    margin-right: -2px;
+}
+
+.box3{
+    margin-top: -2px;
+}
