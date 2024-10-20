@@ -80,8 +80,6 @@ nav a:hover {
     grid-template-columns: 500px 500px;
     grid-template-rows: 200px 200px;
     max-width: 1000px;
-    border: 1px solid rgb(82, 82, 82);
-    
 }
 
 .home-box{
@@ -109,3 +107,8 @@ nav a:hover {
 .box3{
     margin-top: -2px;
 }
+
+.pp {
+    width: 300px; /* Taille de l'image */
+}
+
