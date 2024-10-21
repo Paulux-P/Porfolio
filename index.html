@@ -14,7 +14,7 @@
             <section></section>
             <nav>
                 <a href="#" class="active">Accueil</a>
-                <a href="">Paul</a>
+                <a href="">À propos de moi</a>
                 <a href="">Mes projets</a>
                 <a href="">Experiences</a>
             </nav>
@@ -23,26 +23,37 @@
         <main>
             <div class="grid-home">
                 <div class="home-box box1">
-                    <div class="content">
-                        <p>MyRallye</p>
-                        <h1>Mon dernier projet</h1>
+                    <div class="content-home-box">
+                        <p class="subtitle-home-box">MyRallye</p>
+                        <h1 class="title-home-box">Mon dernier projet</h1>
                     </div>
                 </div>
-                <div class="home-box box2">
-                    <div class="content">
-                        <p>lorem ipsum</p>
-                        <h1>Mon CV</h1>
+                <div class="home-box box2" onclick="openLink('/cv/cv.html')">
+                    <div class="content-home-box">
+                        <p class="subtitle-home-box">lorem ipsum</p>
+                        <h1 class="title-home-box">Mon CV</h1>
                     </div>
                 </div>
                 <div class="home-box box3">
-                    <div class="content">
-                        <p>lorem ipsum</p>
-                        <h1>Me contacter</h1>
+                    <div class="content-home-box">
+                        <p class="subtitle-home-box">lorem ipsum</p>
+                        <h1 class="title-home-box">Me contacter</h1>
                     </div>
                 </div>
             </div>
         </main>
+
+        <div class="link-widget">
+            <a href="" class="widget"><img src="images/linkedin-logo.png" alt="linkedin-logo"></a>
+            
+        </div>
     </div>
+
+    <footer>
+        <p>
+            Copyright © 2024 Paul Cogitore
+        </p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
