@@ -20,13 +20,24 @@
                 </nav>
         </header>
 
-        <main class="mainProject -flex -fdirectionRow -w100 -pad20px">
-            <div class="box-projects -flex -fdirectionRow">
-                <div id="lastProject" class="project"></div>
-                <div class="project"></div>
-                <div class="project"></div>
-                <div class="project"></div>
-                <div class="project"></div>
+        <main class="mainProject -flex -w100 -pad20px">
+
+            <div class="box-projects -flex -fdirectionCol">
+
+                <div id="projects-container" class="projects-container -flex -fdirectionRow">
+                    <div id="lastProject" class="project" onmouseover="hoverEffect('lastProject')"></div>
+                    <div id="project4" class="project" onmouseover="hoverEffect('project4')"></div>
+                    <div id="project3" class="project" onmouseover="hoverEffect('project3')"></div>
+                    <div id="project2" class="project" onmouseover="hoverEffect('project2')"></div>
+                    <div id="project1" class="project" onmouseover="hoverEffect('project1')"></div>
+                </div>
+
+                <div class="controls -flex -fdirectionRow">
+                    <button onclick="scrollToLeft(224)">left</button>
+                    <button onclick="scrollToRight(224)">right</button>
+                </div>
+
+
             </div>
 
             <div class="project-content">
@@ -43,5 +54,7 @@
             Copyright © 2024 Paul Cogitore
         </p>
     </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html>

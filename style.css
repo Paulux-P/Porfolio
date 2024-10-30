@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'battlefront', sans-serif;
 }
 
 
@@ -51,9 +52,7 @@ html,body{
 
 
 html {
-    scroll-behavior: smooth;
-    font-family: 'battlefront', sans-serif;
-    
+    scroll-behavior: smooth;    
 }
 
 body {
@@ -293,21 +292,28 @@ footer{
     justify-content: space-between;
 }
 
-.box-projects{
-    justify-content: space-between;
-    width: 45%;
-    padding: 40px 0;
+.box-projects{ /*conteneur de project*/
+    width: 48%;
+    padding: 40px 0px;
+    
+}
+
+.projects-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Active le défilement horizontal */
+
 }
 
 .project{
     border-width: 0 2px;
     border-color: rgba(115, 115, 115, 1);
     border-style: solid;
-    margin: 0 -2px 0 0;
-    flex: 1;
+    flex: 0 0 200px; /* Taille fixe pour chaque projet */
     cursor: pointer;
     transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
     backdrop-filter:blur(2px);
+    margin: 0 10px;
 }
 
 .project-content{
@@ -318,12 +324,27 @@ footer{
 }
 
 .project:hover{
-    flex: 3;
     border-color: #FBB10A;
-    z-index: 2;
+    flex: 0 0 250px; /* Taille fixe pour chaque projet */
+    margin: 0 10px 0 0px;
+}
+
+.project:hover .projects-container {
+    width: 110%;
 }
 
 
+.controls {
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.controls > button {
+    border: none;
+    background-color: transparent;
+    color:white;
+    cursor: pointer;
+}
 
 
 
@@ -350,6 +371,10 @@ footer{
 
 .-fdirectionRow{
     flex-direction: row;
+}
+
+.-fdirectionCol{
+    flex-direction: column;
 }
 
 .-w100{
