@@ -217,6 +217,9 @@ footer{
     color: rgba(115, 115, 115, 0.8);
 }
 
+/*====================================CV====================================*/
+
+
 .cv-page{
     backdrop-filter: blur(5px);
 }
@@ -232,7 +235,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
+    flex-wrap: wrap;
 }
 
 .button-cv{
@@ -279,8 +282,7 @@ footer{
 }
 
 
-
-
+/*==========================================================================*/
 
 
 .navProjects{
@@ -323,16 +325,11 @@ footer{
     color: white;
 }
 
-.project:hover{
+.project-visible:hover{
     border-color: #FBB10A;
     flex: 0 0 250px; /* Taille fixe pour chaque projet */
     margin: 0 10px 0 0px;
 }
-
-.project:hover .projects-container {
-    width: 110%;
-}
-
 
 .controls {
     justify-content: space-between;
@@ -344,9 +341,27 @@ footer{
     background-color: transparent;
     color:white;
     cursor: pointer;
+    border: 2px solid rgba(115, 115, 115);
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: rgba(115, 115, 115);
+    backdrop-filter: blur(10px);
+    font-size: 15px;
+    transition-duration: 0.2s;
+}
+
+.controls > button:disabled {
+    cursor: not-allowed;
+    box-shadow:  0 0 8px rgba(255, 0, 0, 1);
 }
 
 
+
+.controls > button:hover:not(:disabled) {
+   border-color: rgb(229, 229, 229);
+   color: rgb(229, 229, 229);
+   
+}
 
 
 

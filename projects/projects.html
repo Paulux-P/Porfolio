@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes projets</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body onload="loadVisibleProject(), updateScrollButton()">
 
     <div class="projects-container">
 
@@ -16,7 +17,7 @@
                     <a href="../index.html">Accueil</a>
                     <a href="">À propos de moi</a>
                     <a href="" class="active">Mes projets</a>
-                    <a href="">Experiences</a>
+                    <a href="">Expériences</a>
                 </nav>
         </header>
 
@@ -33,8 +34,10 @@
                 </div>
 
                 <div class="controls -flex -fdirectionRow">
-                    <button onclick="scrollToLeft(224)">left</button>
-                    <button onclick="scrollToRight(224)">right</button>
+                    <button id="scrollProjectLeft" onclick="scrollToLeft(224), loadVisibleProject(), updateScrollButton()"><i class="fa fa-chevron-left"></i>
+                    </button>
+                    <button id="scrollProjectRight" onclick="scrollToRight(224), loadVisibleProject(), updateScrollButton()">  <i class="fa fa-chevron-right"></i>
+                    </button>
                 </div>
 
 
