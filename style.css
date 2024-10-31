@@ -101,7 +101,7 @@ nav a:hover {
     z-index: 2;
 } 
 
-.active {
+.nav-active {
     border-color: rgb(255, 255, 254);
     z-index: 2;
     background-color: rgba(255, 255, 255, 0.1);
@@ -316,6 +316,7 @@ footer{
     transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
     backdrop-filter:blur(2px);
     margin: 0 10px;
+    position: relative;
 }
 
 .project-content{
@@ -352,7 +353,7 @@ footer{
 
 .controls > button:disabled {
     cursor: not-allowed;
-    box-shadow:  0 0 8px rgba(255, 0, 0, 1);
+    opacity: 0.5;
 }
 
 
@@ -366,10 +367,13 @@ footer{
 
 
 
+/*=================================aboutMe=================================*/
 
 
 
-
+.aboutMe-container {
+    padding: 5% 0% 0% 10%;
+}
 
 
 
