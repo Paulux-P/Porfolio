@@ -61,7 +61,6 @@ body {
 }
 
 .home-container{
-    
     padding: 5% 0% 0% 10%;
 }
 
@@ -371,13 +370,6 @@ footer{
 
 
 
-.aboutMe-container {
-    padding: 5% 0% 0% 10%;
-}
-
-
-
-
 
 
 
@@ -402,4 +394,8 @@ footer{
 
 .-pad20px{
     padding: 20px;
+}
+
+.-marginNav{
+    margin: 5% 0% 0% 10%;
 }
