@@ -32,9 +32,9 @@ function hoverEffect(id) {
             }else if (!isElementFullyVisibleLeft(id)) {
                 let value = (getHiddenPixelsLeft(id) + 11);
                 
-                setTimeout(() => {scrollToLeft(value);}, 10);
+                setTimeout(() => {scrollToLeft(value - 2);}, 10);
             };
-        }, 150);  
+        }, 50);  
     }
 }
 

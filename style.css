@@ -316,6 +316,44 @@ footer{
     backdrop-filter:blur(2px);
     margin: 0 10px;
     position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project > h1 {
+    color: floralwhite;
+    text-align: center;
+}
+
+
+#lastProject{
+    background-image: url(images/LastProject.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#project3{
+    background-image: url(images/server.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#project2 {
+    background-image: url(images/html-scren.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#project1 {
+    background-image: url(images/java-screen.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .project-content{
@@ -323,6 +361,18 @@ footer{
     width: 45%;
     backdrop-filter:blur(10px);
     color: white;
+}
+
+.project-content > h1{
+    text-align: center;
+}
+
+.project-title {
+    margin: 10px 0;
+}
+
+.project-explications{
+    padding: 5px;
 }
 
 .project-visible:hover{
@@ -373,6 +423,9 @@ footer{
 
 
 
+.-white{
+    color: rgb(255,255,255);
+}
 
 
 .-flex{
