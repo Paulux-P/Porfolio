@@ -17,6 +17,34 @@ function scrollToLeft(value) {
     })
 }
 
+const card = document.querySelectorAll(".card");
+
+card.forEach( el => {
+    el.addEventListener("mousemove", e => {
+
+        let elRect = el.getBoundingClientRect();
+
+        let x = e.clientX - elRect.x;
+        let y = e.clientY - elRect.y;
+
+        let midCardWidth = elRect.width / 2;
+        let midCardHeight = elRect.height / 2;
+
+        let angleY = -(x - midCardWidth) / 8;
+        let angleX = (y - midCardHeight) / 7;
+
+
+        el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`;
+
+    } );
+
+    el.addEventListener("mouseleave", () => {
+        el.children[0].style.transform = "rotateX(0) rotateY(0)";
+
+    });
+});
+
+
 
 function hoverEffect(id) {
     const container = document.getElementById('projects-container');
@@ -174,4 +202,47 @@ function updateScrollButton() {
         buttonRight.disabled = !scrollableRight; // Désactive le bouton si on ne peut pas scroller à droite
     }, 250);
 
+}
+
+
+let timeout;
+window.addEventListener('resize', function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(updateSize(), 200);
+});
+function updateSize() {
+    loadVisibleProject();
+    updateScrollButton();
+}
+
+
+function displayProject(id, projectName) {
+
+
+
+    let projetDejaAfficher = document.getElementsByClassName('displayProject');
+
+    
+
+    if (projetDejaAfficher.length !=0) {
+        for (let i = 0; i < projetDejaAfficher.length; i++) {
+            projetDejaAfficher[i].classList.remove('displayProject');
+            
+        }
+    }
+
+    let contentProjetDejaAfficher = document.getElementsByClassName('ContentProject-visible');
+
+    if (contentProjetDejaAfficher.length !=0) {
+        for (let i = 0; i < contentProjetDejaAfficher.length; i++) {
+            contentProjetDejaAfficher[i].classList.remove('ContentProject-visible');
+        }
+    }
+
+
+    let project = document.getElementById(id);
+    project.classList.add('displayProject');
+
+    let contentProject = document.getElementById(projectName);
+    contentProject.classList.add('ContentProject-visible')
 }

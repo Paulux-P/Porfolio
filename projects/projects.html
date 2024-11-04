@@ -25,22 +25,22 @@
             <div class="box-projects -flex -fdirectionCol">
 
                 <div id="projects-container" class="projects-container -flex -fdirectionRow">
-                    <div id="lastProject" class="project" onmouseover="hoverEffect('lastProject')">
+                    <div id="lastProject" class="project" onmouseover="hoverEffect('lastProject')" onclick="displayProject('lastProject', 'MyRally')">
                         <h1>MyRally</h1>
 
                     </div>
 
-                    <div id="project3" class="project" onmouseover="hoverEffect('project3')">
+                    <div id="project3" class="project" onmouseover="hoverEffect('project3')" onclick="displayProject('project3')">
                         <h1>Installation Machine Serveur</h1>
 
                     </div>
 
-                    <div id="project2" class="project" onmouseover="hoverEffect('project2')">
+                    <div id="project2" class="project" onmouseover="hoverEffect('project2')" onclick="displayProject('project2')">
                         <h1>Création d'un site web pour une ESN</h1>
 
                     </div>
 
-                    <div id="project1" class="project" onmouseover="hoverEffect('project1')">
+                    <div id="project1" class="project" onmouseover="hoverEffect('project1')" onclick="displayProject('project1')">
                         <h1>Algorithme de tri</h1>
 
                     </div>
@@ -56,9 +56,17 @@
 
             </div>
 
-            <div class="project-content">
-                <h1 class="project-title">Titre du projet</h1>
-                <p class="project-explications">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quas libero sint. Repudiandae quis veritatis eius dignissimos, unde perspiciatis laboriosam rerum doloribus veniam cupiditate minima quibusdam et, quae harum esse!</p>
+            <div class="project-content-container">
+
+                <div id="MyRally" class="project-content">
+
+                    <h1 class="project-title">MyRally</h1>
+                    <h2 class="project-type">Projet académique</h2>
+                    <p class="project-explications">Pour ce projet, l'objectif était de concevoir et déveloper une application lourde en Java de gestion d'évenements</p>
+
+                </div>
+
+
             </div>
 
         </main>
