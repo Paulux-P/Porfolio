@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes projets</title>
+    <link rel="icon" sizes="512x512" href="../images/favicon.png">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -24,7 +25,12 @@
 
             <div class="box-projects -flex -fdirectionCol">
 
-                <div id="projects-container" class="projects-container -flex -fdirectionRow">
+                <div class="categorie">
+                    <button>Académiques</button>
+                    <button>Personnels</button>
+                </div>
+
+                <div id="projects-container" class="projects-academique-container -flex -fdirectionRow">
                     <div id="lastProject" class="project" onmouseover="hoverEffect('lastProject')" onclick="displayProject('lastProject', 'MyRally')">
                         <h1>MyRally</h1>
 
@@ -44,6 +50,7 @@
                         <h1>Algorithme de tri</h1>
 
                     </div>
+                    
                 </div>
 
                 <div class="controls -flex -fdirectionRow">
@@ -53,6 +60,7 @@
                     </button>
                 </div>
 
+                
 
             </div>
 

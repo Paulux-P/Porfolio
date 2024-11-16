@@ -16,6 +16,7 @@ function scrollToLeft(value) {
         behavior: 'smooth' 
     })
 }
+/*===============================3D effect card ===============================*/
 
 const card = document.querySelectorAll(".card");
 
@@ -33,27 +34,23 @@ card.forEach( el => {
         let angleY = -(x - midCardWidth) / 8;
         let angleX = (y - midCardHeight) / 8;
 
-        let glowX = x / elRect.width * 100;
-        let glowY = y / elRect.height * 100;
-
         el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`;
 
-        // el.children[1].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`;
+        let posSouris = document.getElementById("posSouris");
 
-        // el.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgb(184, 196, 211), transparent)`
-
+        posSouris.textContent ="X: " + x  + "  |   Y: " + y + " | angleX: " + angleX + "   |   angleY: " + angleY;
+        //pour rotate idée utiliser le modulo la taille de la carte
     } );
 
     el.addEventListener("mouseleave", () => {
         el.children[0].style.transform = "rotateX(0) rotateY(0)";
-
-        el.children[1].style.transform = "rotateX(0) rotateY(0)";
-
-        // el.children[1].style.background = 'transparent';
+        posSouris.textContent ="";
+        
+        
     });
 });
 
-
+/*==============================================================================*/
 
 function hoverEffect(id) {
     const container = document.getElementById('projects-container');
@@ -226,32 +223,30 @@ function updateSize() {
 
 
 function displayProject(id, projectName) {
-
-
-
-    let projetDejaAfficher = document.getElementsByClassName('displayProject');
-
     
+    if (isElementFullyVisible(id)) {
+        let projetDejaAfficher = document.getElementsByClassName('displayProject');
 
-    if (projetDejaAfficher.length !=0) {
-        for (let i = 0; i < projetDejaAfficher.length; i++) {
-            projetDejaAfficher[i].classList.remove('displayProject');
-            
+        if (projetDejaAfficher.length !=0) {
+            for (let i = 0; i < projetDejaAfficher.length; i++) {
+                projetDejaAfficher[i].classList.remove('displayProject');
+                
+            }
         }
-    }
 
-    let contentProjetDejaAfficher = document.getElementsByClassName('ContentProject-visible');
+        let contentProjetDejaAfficher = document.getElementsByClassName('ContentProject-visible');
 
-    if (contentProjetDejaAfficher.length !=0) {
-        for (let i = 0; i < contentProjetDejaAfficher.length; i++) {
-            contentProjetDejaAfficher[i].classList.remove('ContentProject-visible');
+        if (contentProjetDejaAfficher.length !=0) {
+            for (let i = 0; i < contentProjetDejaAfficher.length; i++) {
+                contentProjetDejaAfficher[i].classList.remove('ContentProject-visible');
+            }
         }
+
+        let project = document.getElementById(id);
+        let contentProject = document.getElementById(projectName);
+
+        project.classList.add('displayProject');
+        contentProject.classList.add('ContentProject-visible');
     }
-
-
-    let project = document.getElementById(id);
-    project.classList.add('displayProject');
-
-    let contentProject = document.getElementById(projectName);
-    contentProject.classList.add('ContentProject-visible')
+    
 }
