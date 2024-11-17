@@ -107,7 +107,7 @@ nav a:hover {
     color:  var(--border-color);
     border-color:  var(--border-color);
     text-shadow: rgb(251, 177, 10) 0px 0px 10px;
-    z-index: 2;
+    z-index: 3;
 } 
 
 .nav-active {
@@ -133,6 +133,7 @@ nav a:hover {
 .content-home-box{
     padding: 20px;
     position: relative;
+    
 }
 
 .content-home-box::before{
@@ -232,14 +233,14 @@ footer{
     gap: 105px;
 }
 
-.card {
+.cardDeco {
     width: 200px;
     aspect-ratio: 62/89;
     margin-top: 100px;
     perspective: 1000px;
 }
 
-.content-card {
+.content-cardDeco {
     position: relative;
     display: flex;
     justify-content: center;
@@ -253,7 +254,7 @@ footer{
     user-select: none;
 }
 
-.content-card img{
+.content-cardDeco img{
     width: 60%;
     border-radius: 050%;
     opacity: 0.5;
@@ -342,7 +343,7 @@ footer{
 }
 
 .box-projects{ /*conteneur de project*/
-    width: 50%;
+    width: 52%;
     padding: 40px 0px;
     
 }
@@ -570,12 +571,77 @@ footer{
 
 
 
-/*=================================aboutMe=================================*/
+/*=================================experiences=================================*/
+
+.experiences-container{
+    height: 100vh;
+}
+
+.main-experiences {
+    border: 2px solid rgba(115, 115, 115);
+    max-height: 82vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.experiences {
+    margin: 20px;
+    display: flex;
+    border: 2px solid rgba(115, 115, 115);
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+    justify-content: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 200px;
+    aspect-ratio: 62/89;
+    perspective: 1000px;
+    text-align: center;
+    /* backdrop-filter: blur(17px); */
+    
+}
+
+.content-card {
+    display: flex;
+    height: 100%;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.15s ease-out;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgb(126, 86, 255);
+    background-image: linear-gradient(150deg, rgb(90, 0, 255) 0%, rgb(255, 31, 247) 100%, rgb(255, 31, 247) 100%);
+    transform-style: preserve-3d;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.15s ease-out;
+     
+}
 
 
 
+.content-card:hover .description{
+    transform: translateZ(40px);
+}
 
 
+.description-experience {
+    margin: 20px;
+    border: 2px solid rgba(115, 115, 115);
+    padding: 20px;
+    border-radius: 10px;
+    height: 200px;
+}
+
+/*==============================================================================*/
 
 .-white{
     color: rgb(255,255,255);
@@ -618,7 +684,7 @@ footer{
 
 
 @media (max-width: 1500px) {
-    .card {
+    .cardDeco {
         display: none;
     }
 }

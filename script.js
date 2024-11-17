@@ -18,7 +18,48 @@ function scrollToLeft(value) {
 }
 /*===============================3D effect card ===============================*/
 
+const cardDeco = document.querySelectorAll(".cardDeco");
 const card = document.querySelectorAll(".card");
+
+cardDeco.forEach( el => {
+    el.addEventListener("mousemove", e => {
+
+        let elRect = el.getBoundingClientRect();
+
+        let x = e.clientX - elRect.x;
+        let y = e.clientY - elRect.y;
+
+        let midCardWidth = elRect.width / 2;
+        let midCardHeight = elRect.height / 2;
+
+        let angleY = -(x - midCardWidth) / 8;
+        let angleX = (y - midCardHeight) / 8;
+
+        //rotation que si on est sur la partie basse de la carte avec la souris
+        let angleRotate;
+        if ((y > midCardHeight*1.1)) {
+            angleRotate = - angleY * (y%(midCardHeight*1.1) /50)/10;
+        }else {
+            angleRotate = 0;
+        }
+
+        el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1) rotate(${angleRotate}deg)`;
+
+        //let posSouris = document.getElementById("posSouris");
+
+        //posSouris.textContent ="X: " + x  + "  |   Y: " + y + " | angleX: " + angleX + "   |   angleY: " + angleY + "  " + midCardHeight;
+        
+        
+    } );
+
+    el.addEventListener("mouseleave", () => {
+
+        setTimeout(() => {
+            el.children[0].style.transform = "rotateX(0) rotateY(0)";
+            posSouris.textContent ="";}, 400);
+        
+    });
+});
 
 card.forEach( el => {
     el.addEventListener("mousemove", e => {
@@ -34,18 +75,28 @@ card.forEach( el => {
         let angleY = -(x - midCardWidth) / 8;
         let angleX = (y - midCardHeight) / 8;
 
-        el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`;
+        //rotation que si on est sur la partie basse de la carte avec la souris
+        let angleRotate;
+        if ((y > midCardHeight*1.1)) {
+            angleRotate = - angleY * (y%(midCardHeight*1.1) /50)/10;
+        }else {
+            angleRotate = 0;
+        }
 
-        let posSouris = document.getElementById("posSouris");
+        el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05) rotate(${angleRotate}deg)`;
 
-        posSouris.textContent ="X: " + x  + "  |   Y: " + y + " | angleX: " + angleX + "   |   angleY: " + angleY;
-        //pour rotate idée utiliser le modulo la taille de la carte
+        //let posSouris = document.getElementById("posSouris");
+
+        //posSouris.textContent ="X: " + x  + "  |   Y: " + y + " | angleX: " + angleX + "   |   angleY: " + angleY + "  " + midCardHeight;
+        
+        
     } );
 
     el.addEventListener("mouseleave", () => {
-        el.children[0].style.transform = "rotateX(0) rotateY(0)";
-        posSouris.textContent ="";
-        
+
+        setTimeout(() => {
+            el.children[0].style.transform = "rotateX(0) rotateY(0)";
+            posSouris.textContent ="";}, 400);
         
     });
 });
