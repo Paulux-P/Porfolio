@@ -25,7 +25,7 @@
 
 
 html,body{
-    height: 100vh; /* Limite la hauteur du body à 100% de la fenêtre */
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -58,24 +58,48 @@ html,body{
 
 /*=====================================================================*/
 
-
+.big-container{
+    padding-top: 93px;
+}
 
 html {
     scroll-behavior: smooth;    
 }
 
 body {
-    background: #000 url(images/pxfuel.png) center/cover no-repeat;
-    background-position: fixed;
-    
+    background: #000 url(images/pxfuel.png) center/cover no-repeat; 
+    background-attachment: fixed;
+}
+
+.margin-left-10{
+    margin-left: 10%;
+}
+
+abbr{
+    cursor:help;
+    text-decoration: underline;
 }
 
 .home-container{
-    padding: 5% 0% 0% 10%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
 }
 
-.navAcceuil {
-    margin-bottom: 40px;
+.home-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+    
+    gap: 100px;
+}
+
+header{
+    display: flex;
+    width: fit-content;
 }
 
 nav  {
@@ -201,23 +225,21 @@ nav a:hover {
 }
 
 .link-widget{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-}
-
-.widget{
     width: 30px;
     height: 30px;
 }
 
-.widget img{
+.widget{
+    display: block;
     width: 100%;
     height: 100%;
+    background:  url(images/linkedin-logo.png) center/cover no-repeat; 
+
 }
 
+
+
 .widget:hover {
-    
     filter: drop-shadow(0 0 10px rgba(255, 255, 254, 0.8));
 }
 
@@ -227,11 +249,7 @@ footer{
     color: rgba(115, 115, 115, 0.5);
 }
 
-.home-main{
-    display: flex;
-    flex-direction: row;
-    gap: 105px;
-}
+
 
 .cardDeco {
     width: 200px;
@@ -260,11 +278,6 @@ footer{
     opacity: 0.5;
 }
 
-#posSouris {
-    color: white;
-    font-size: 25px;
-}
-
 /*====================================CV====================================*/
 
 
@@ -276,14 +289,17 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
 }
 
 .header-cv-page{
     display: flex;
+    height: fit-content;
     flex-direction: row;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
 }
 
 .button-cv{
@@ -332,9 +348,9 @@ footer{
 
 /*==========================================================================*/
 
-
-.navProjects{
-    margin: 5% 0% 0% 10%;
+.projects-container {
+    height: 98%;
+    
 }
 
 .mainProject{
@@ -344,7 +360,6 @@ footer{
 
 .box-projects{ /*conteneur de project*/
     width: 52%;
-    padding: 40px 0px;
     
 }
 
@@ -575,7 +590,7 @@ footer{
 
 .experiences-container{
     height: 100vh;
-
+    
 }
 
 .main-experiences {
@@ -584,6 +599,8 @@ footer{
     flex-direction: column;
     margin: 20px;
     gap: 10px;
+    position: relative;
+    top: 93px;
 }
 
 .experiences {
@@ -639,7 +656,7 @@ footer{
     border: 2px solid rgba(115, 115, 115);
     padding: 20px;
     border-radius: 10px;
-    height: 404vh;
+    
     font-size: 1.22em;
     backdrop-filter: blur(17px);
 }
@@ -701,5 +718,64 @@ footer{
 @media (max-width: 1500px) {
     .cardDeco {
         display: none;
+    }
+}
+
+@media (max-width: 1110px) {
+
+    .big-container{
+        padding-top: 12px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    header {
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .margin-left-10{
+        margin-left: 0%;
+    }
+    
+
+    .home-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid-home {
+
+        grid-template-columns: 500px ;
+        grid-template-rows: 200px 200px;
+
+    }
+
+    .box1{
+        margin-right: 0px;
+        margin-bottom: -2px;
+    }
+
+    nav{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+    }
+
+    .header-cv-page{
+        gap: 0px;
+    }
+
+    .contentCV{
+        width: 90%;
+     
+    }
+
+    .mainProject{
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 }
