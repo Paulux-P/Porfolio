@@ -642,7 +642,10 @@ footer{
     flex-direction: column;
     gap: 15px;
     transition: all 0.15s ease-out;
-     
+}
+
+.description h2 {
+    font-size: 22px;
 }
 
 
@@ -706,10 +709,16 @@ footer{
 }
 
 
+/*=============================ContacME==============================*/
 
 
+.main-contactMe{
+    display: flex;
+
+}
 
 
+/*===================================================================*/
 
 
 
