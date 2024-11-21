@@ -267,6 +267,7 @@ window.addEventListener('resize', function() {
     clearTimeout(timeout);
     timeout = setTimeout(updateSize(), 200);
 });
+
 function updateSize() {
     loadVisibleProject();
     updateScrollButton();
@@ -300,4 +301,25 @@ function displayProject(id, projectName) {
         contentProject.classList.add('ContentProject-visible');
     }
     
+}
+
+function triggerAction() {
+    // Définir une commande dans le stockage local
+    localStorage.setItem("triggerApparition", "true");
+}
+
+// Vérifier le stockage local
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("triggerApparition") === "true") {
+        displayProject('lastProject', 'MyRally');
+      // Nettoyer le stockage local pour éviter les déclenchements ultérieurs
+      localStorage.removeItem("triggerApparition");
+    }
+  });
+
+
+function displayExperiences(id) {
+    let content = document.getElementById(id);
+    content.style.display = "flex";
+    content.parentElement.style.border = "2px solid rgba(115, 115, 115)"
 }
