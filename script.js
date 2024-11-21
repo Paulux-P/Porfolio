@@ -95,8 +95,7 @@ card.forEach( el => {
     el.addEventListener("mouseleave", () => {
 
         setTimeout(() => {
-            el.children[0].style.transform = "rotateX(0) rotateY(0)";
-            posSouris.textContent ="";}, 400);
+            el.children[0].style.transform = "rotateX(0) rotateY(0)";}, 400);
         
     });
 });
@@ -320,6 +319,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function displayExperiences(id) {
     let content = document.getElementById(id);
+    let parent = content.parentElement;
+
+    
+    for(let i = 0; i  < parent.children.length; i++ ) {
+        parent.children[i].style.display = "none";
+    }
+
     content.style.display = "flex";
-    content.parentElement.style.border = "2px solid rgba(115, 115, 115)"
+
+    parent.style.border = "2px solid rgba(115, 115, 115)"
 }
