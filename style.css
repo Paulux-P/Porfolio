@@ -134,7 +134,7 @@ nav a {
 nav a:hover {
     color:  var(--border-color);
     border-color:  var(--border-color);
-    text-shadow: rgb(251, 177, 10) 0px 0px 10px;
+    text-shadow: var(--border-color) 0px 0px 10px;
     z-index: 3;
 } 
 
@@ -193,7 +193,7 @@ nav a:hover {
 
 .home-box:hover  .title-home-box {
     color:  var(--border-color);
-    text-shadow: rgb(251, 177, 10) 0px 0px 10px;
+    text-shadow: var(--border-color) 0px 0px 10px;
 }
 
 .subtitle-home-box{
@@ -325,7 +325,7 @@ footer{
 .button-cv:hover{
     color:  var(--border-color);
     border-color:  var(--border-color);
-    text-shadow: rgb(251, 177, 10) 0px 0px 10px;
+    text-shadow: var(--border-color) 0px 0px 10px;
     box-shadow: 0 0 10px  var(--border-color), inset 0 0 10px  var(--border-color);
     
 }
@@ -575,29 +575,6 @@ footer{
    
 }
 
-
-.categorie button {
-    background-color: transparent;
-    color:white;
-    cursor: pointer;
-    border: 2px solid rgba(115, 115, 115);
-    border-radius: 8px;
-    padding: 5px 20px;
-    color: rgba(115, 115, 115);
-    backdrop-filter: blur(5px);
-    font-size: 15px;
-    transition-duration: 0.2s;
-    margin: 5px;
-    font-size: 18px;
-}
-
-.categorie button:hover {
-    border-color: rgb(229, 229, 229);
-    color: rgb(229, 229, 229);
-}
-
-
-
 /*=================================experiences=================================*/
 
 .experiences-container{
@@ -682,6 +659,130 @@ footer{
 
 
 /*==============================================================================*/
+/*=============================ContacME==============================*/
+
+
+.main-contactMe{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+
+}
+
+.nav-contactMe {
+    width: 100%;
+    
+}
+
+.home-button{
+    padding: 10px;
+    font-size: 1.2em;
+    color: rgba(115, 115, 115);
+    backdrop-filter: blur(10px);
+    width: 200px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid rgba(115, 115, 115);
+    transition-duration: 0.2s;
+    margin: 20px;
+}
+.home-button:hover{
+    color:  var(--border-color);
+    border-color:  var(--border-color);
+    text-shadow: var(--border-color) 0px 0px 10px;
+    box-shadow: 0 0 10px  var(--border-color), inset 0 0 10px  var(--border-color);
+}   
+
+.submit-button {
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1.2em;
+    color: rgba(115, 115, 115);
+    backdrop-filter: blur(10px);
+    width: 200px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid rgba(115, 115, 115);
+    transition-duration: 0.2s;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    color:  var(--border-color);
+    border-color:  var(--border-color);
+    text-shadow: var(--border-color) 0px 0px 10px;
+    box-shadow: 0 0 10px  var(--border-color), inset 0 0 10px  var(--border-color);
+}
+
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    gap: 50px;
+    height: 90%;
+    
+}
+
+.sectionInput{
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    gap: 2em;
+    width: 100%;
+    
+    position: relative;
+    
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+}
+
+.textarea-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+}
+
+label {
+    font-size: 25px;
+    position: absolute;
+    margin-left: 2px;
+    transition: all 0.20s ease-out;
+    color: white;
+}
+
+input {
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    border-bottom: 2px solid rgb(82, 82, 82); ;
+    color: white;
+}
+
+textarea {
+    font-size: 20px;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 2px solid rgb(82, 82, 82);
+    background-color: rgba(255, 255, 254, 0.2);
+    color: white;
+}
+
+/*===================================================================*/
 
 .-white{
     color: rgb(255,255,255);
@@ -719,16 +820,6 @@ footer{
 }
 
 
-/*=============================ContacME==============================*/
-
-
-.main-contactMe{
-    display: flex;
-
-}
-
-
-/*===================================================================*/
 
 
 
@@ -796,5 +887,10 @@ footer{
     .mainProject{
         flex-direction: column;
         flex-wrap: wrap;
+    }
+
+    .textarea-container {
+        width: 100%;
+        height: 90%;
     }
 }

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Me contacter | Paul Cogitore</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" sizes="512x512" href="../images/favicon.png">
+</head>
+<body>
+
+    <main class="main main-contactMe">
+        <nav class="nav-contactMe">
+            <a class="home-button" href="../index.html">Acceuil</a>
+        </nav>
+
+        <form action="sendMail.php" method="post">
+
+            <section class="sectionInput">
+
+                <div class="input-container nom">
+                    <label id="labelNom" for="nom">Nom</label>
+                    <input id="nom" type="text" name="name" required >
+                </div>
+
+                <div class="input-container prenom">
+                    <label id="labelPrenom" for="prenom">Prénom</label>
+                    <input id="prenom" type="text" name="prenom" required>
+                </div>
+    
+            </section>
+
+            <section class="sectionInput">
+
+                <div class="input-container email">
+                    <label id="labelEmail" for="email">Email</label>
+                    <input id="email" type="email" name="email" required >
+                </div>
+
+                <div class="input-container sujet">
+                    <label id="labelMailSubject" for="mailSubject">Sujet</label>
+                    <input id="mailSubject" type="text" name="subject" required>
+                </div>
+            </section>
+
+            <section class="textarea-container" >
+                <textarea name="message" id="message" required placeholder="Message...."></textarea>
+            </section>
+
+            <button class="submit-button" type="submit">Envoyer</button>
+        </form>
+
+    </main>
+    
+    <script src="../script.js" ></script>
+</body>
+</html>

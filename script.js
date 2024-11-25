@@ -330,3 +330,62 @@ function displayExperiences(id) {
 
     parent.style.border = "2px solid rgba(115, 115, 115)"
 }
+
+
+
+const inputNom = document.getElementById('nom');
+const labelNom = document.getElementById('labelNom');
+
+const inputPrenom = document.getElementById('prenom');
+const labelPrenom = document.getElementById('labelPrenom');
+
+const inputEmail = document.getElementById('email');
+const labelEmail = document.getElementById('labelEmail');
+
+const inputSubject = document.getElementById('mailSubject');
+const labelSubject = document.getElementById('labelMailSubject');
+
+
+const inputs =[];
+inputs.push(inputNom, inputPrenom, inputEmail, inputSubject);
+
+const mapInputs = new Map();
+mapInputs.set(inputNom,labelNom);
+mapInputs.set(inputPrenom,labelPrenom);
+mapInputs.set(inputEmail,labelEmail);
+mapInputs.set(inputSubject,labelSubject);
+
+inputs.forEach(element => {
+    element.addEventListener('click', (event) => {
+        let input = event.target;
+        label = mapInputs.get(input);
+        
+        
+        if (input.value == "" && document.activeElement == input) {
+            label.style.transform = 'translateY(-20px)';
+            label.style.color = '#fbb10a';
+            label.style.fontSize = '17px';
+            input.style.borderColor = '#fbb10a';
+        }
+        
+    });
+
+    element.addEventListener('blur', (event) => {
+        let input = event.target;
+        label = mapInputs.get(input);
+        
+        
+        if (input.value == "" ) {
+            label.style.transform = 'translateY(0)';
+            label.style.color = 'white';
+            label.style.fontSize = '25px';
+            input.style.borderColor = 'rgb(82, 82, 82)';
+        }
+
+        if (!input.checkValidity() && input.value != ""  ) {
+            input.style.borderColor = 'red';
+            label.style.color = 'red';
+        }
+        
+    });
+});
