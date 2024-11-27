@@ -1,20 +1,37 @@
 ﻿<?php
+
+require '../vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 $nom = $_POST['name'];
 $prenom = $_POST['prenom'];
-$mail = $_POST['email'];
+$email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 
-// Construire les en-têtes pour l'email
-$headers = "From: $prenom $nom <$mail>\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$mail = new PHPMailer(true);
 
-if (mail('hunterhwar@gmail.com', $subject, $message, $headers)) {
-    // Si l'email est envoyé, rediriger l'utilisateur
-    header("Location: contact.html");
-    exit();
-} else {
-    // Si l'email échoue, afficher une erreur
-    die("Une erreur est survenue lors de l'envoi de l'email.");
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'paul.cogitore@gmail.com';
+    $mail->Password = 'eedz vwnh ozhb zpzh';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->setFrom("paul.cogitore@gmail.com", "$nom $prenom");
+    $mail->addAddress('paul.cogitore@gmail.com', 'Nom du destinataire');
+
+    $mail->Subject ="$subject";
+    $mail->Body = "Message de $nom $prenom ($email): \n \n $message";
+
+    $mail->send();
+    echo 'Email envoyé avec succès.';
+} catch (Exception $e) {
+    echo "Erreur lors de l'envoi : {$mail->ErrorInfo}";
 }
+
 ?>
