@@ -29,7 +29,8 @@ try {
     $mail->Body = "Message de $nom $prenom ($email): \n \n $message";
 
     $mail->send();
-    echo 'Email envoyé avec succès.';
+    echo 'Email envoyé avec succès. <br/>';
+    echo  '<a href="../index.html">Acceuil</a>';
 } catch (Exception $e) {
     echo "Erreur lors de l'envoi : {$mail->ErrorInfo}";
 }

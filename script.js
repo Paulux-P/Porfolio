@@ -347,6 +347,7 @@ const labelSubject = document.getElementById('labelMailSubject');
 
 
 const inputs =[];
+
 inputs.push(inputNom, inputPrenom, inputEmail, inputSubject);
 
 const mapInputs = new Map();
@@ -355,37 +356,84 @@ mapInputs.set(inputPrenom,labelPrenom);
 mapInputs.set(inputEmail,labelEmail);
 mapInputs.set(inputSubject,labelSubject);
 
-inputs.forEach(element => {
-    element.addEventListener('click', (event) => {
-        let input = event.target;
-        label = mapInputs.get(input);
+if (inputNom !=null) {
+
+
+
+
+
+    inputs.forEach(element => {
+        element.addEventListener('click', (event) => {
+            let input = event.target;
+            label = mapInputs.get(input);
+            
+            
+            if (input.value == "" && document.activeElement == input) {
+                label.style.transform = 'translateY(-20px)';
+                label.style.color = '#fbb10a';
+                label.style.fontSize = '17px';
+                input.style.borderColor = '#fbb10a';
+            }
+            
+        });
+    
+        element.addEventListener('blur', (event) => {
+            let input = event.target;
+            label = mapInputs.get(input);
+            
+            
+            if (input.value == "" ) {
+                label.style.transform = 'translateY(0)';
+                label.style.color = 'white';
+                label.style.fontSize = '25px';
+                input.style.borderColor = 'rgb(82, 82, 82)';
+            }
+    
+            if (!input.checkValidity() && input.value != ""  ) {
+                input.style.borderColor = 'red';
+                label.style.color = 'red';
+            }
+            
+        });
+    });
+}
+
+
+
+const portfolioTitle = document.getElementById('deco-portfolio');
+const effectCircle = document.getElementById('effectCircle');
+
+
+if (portfolioTitle != null) {
+    portfolioTitle.addEventListener('mousemove', e => {
+    
+        effectCircle.style.animation ="apparitionCircle 0.30s ease-in-out forwards";
+
+        let circleH = effectCircle.offsetHeight;
+        let circleW = effectCircle.offsetWidth ;
+
+        let elRect = portfolioTitle.getBoundingClientRect();
+    
+        let x = e.clientX - elRect.x;
+        let y = e.clientY - elRect.y;
+
+
         
-        
-        if (input.value == "" && document.activeElement == input) {
-            label.style.transform = 'translateY(-20px)';
-            label.style.color = '#fbb10a';
-            label.style.fontSize = '17px';
-            input.style.borderColor = '#fbb10a';
-        }
-        
+    
+        // effectCircle.style.top = `${y -circleH/2}px`;
+        // effectCircle.style.left = `${x - circleW/2}px`;
+        effectCircle.style.transform =`translateX(${x - circleW/2}px) translateY(${y -circleH/2}px)`;
+        console.log(circleH, " ", circleW);
     });
 
-    element.addEventListener('blur', (event) => {
-        let input = event.target;
-        label = mapInputs.get(input);
+    portfolioTitle.addEventListener('mouseleave', e => {
         
+        effectCircle.style.animation ="disparition 0.30s ease-in-out forwards";
         
-        if (input.value == "" ) {
-            label.style.transform = 'translateY(0)';
-            label.style.color = 'white';
-            label.style.fontSize = '25px';
-            input.style.borderColor = 'rgb(82, 82, 82)';
-        }
+        setTimeout(() => {
+            effectCircle.style.transform =`translateX(0px) translateY(0px)`;
 
-        if (!input.checkValidity() && input.value != ""  ) {
-            input.style.borderColor = 'red';
-            label.style.color = 'red';
-        }
-        
+        }, 301);
+
     });
-});
+}
