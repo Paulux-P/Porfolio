@@ -476,9 +476,16 @@ footer{
     text-align: center;
 }
 
-
 #lastProject{
-    background-image: url(images/LastProject.png);
+    background-image: url(images/LogoPove.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#project4{
+    background-image: url(images/MyrallyProject.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -510,6 +517,12 @@ footer{
 .project-content > h1{
     text-align: center;
 }
+
+.project-content a{
+    text-decoration: underline;
+    color: var(--border-color);
+}
+
 
 .project-title {
     margin: 10px 0;
@@ -772,6 +785,11 @@ footer{
     border-color:  var(--border-color);
     text-shadow: var(--border-color) 0px 0px 10px;
     box-shadow: 0 0 10px  var(--border-color), inset 0 0 10px  var(--border-color);
+}
+
+.submit-button img {
+    width: 20px;
+    aspect-ratio: 1/1;
 }
 
 
