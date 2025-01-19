@@ -896,9 +896,14 @@ textarea {
 }
 
 
+.main-aboutMe {
+    color: white;
+}
 
-
-
+.boldLetter {
+    font-size: 20px;
+    font-weight: 500;
+}
 
 
 @media (max-width: 1500px) {
