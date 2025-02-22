@@ -441,6 +441,7 @@ footer{
     width: 45%;
     backdrop-filter: blur(10px);
     color: white;
+    height: 100%;
     
 }
 
@@ -531,6 +532,9 @@ footer{
 .project-content{
     padding: 5px;
     display: none;
+    /* overflow: hidden; */
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-visible:hover{
@@ -577,12 +581,14 @@ footer{
 
 .project-explications{
     position: relative;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    
+    height: 85%;
+    overflow: auto;
 }
 
-.project-explications::before,
-.project-explications::after{
+.project-explications::before{
     content: "";
     height: 15px;
     width: 15px;
@@ -596,13 +602,6 @@ footer{
     left: 0;
     border-left: 2px solid  var(--border-color);
     border-top: 2px solid  var(--border-color);
-}
-
-.project-explications::after{
-    bottom: 0;
-    right: 0;
-    border-right: 2px solid  var(--border-color);
-    border-bottom: 2px solid  var(--border-color);
 }
 
 .ContentProject-visible {
@@ -898,6 +897,7 @@ textarea {
 
 .main-aboutMe {
     color: white;
+    padding: 10px;
 }
 
 .boldLetter {
