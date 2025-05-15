@@ -310,7 +310,7 @@ function triggerAction() {
 // Vérifier le stockage local
 document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("triggerApparition") === "true") {
-        displayProject('lastProject', 'Pove');
+        displayProject('lastProject', 'Deckmaster');
       // Nettoyer le stockage local pour éviter les déclenchements ultérieurs
       localStorage.removeItem("triggerApparition");
     }

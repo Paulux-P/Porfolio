@@ -131,7 +131,7 @@ abbr{
     flex-direction: row;
     justify-content: space-between;
     width: fit-content;
-    
+    /* border: 1px solid red; */
     gap: 100px;
 }
 
@@ -295,7 +295,6 @@ footer{
 .cardDeco {
     width: 300px;
     aspect-ratio: 62/89;
-    margin-top: 50px;
     perspective: 1000px;
 }
 
@@ -479,11 +478,19 @@ footer{
 }
 
 #lastProject{
+    background-image: url(images/deckmasterLogo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+#project5{
     background-image: url(images/LogoPove.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 
 #project4{
